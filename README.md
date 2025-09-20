@@ -1,2 +1,2 @@
 # KMITL_Digital
-Digital system fundamental than drives me crazy
+Digital system fundamental that drives me crazy
