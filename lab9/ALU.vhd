@@ -10,7 +10,7 @@ entity ALU is
         EN      :   in  std_logic; -- Enable
         SEL     :   in  std_logic( 1 downto 0); -- Selector
         SW      :   in  std_logic(BinaryCap - 1 downto 0); -- Switch
-        DSW   :   in  std_logic(BinaryCap - 1 downto 0); -- DIP Switch
+        DSW     :   in  std_logic(BinaryCap - 1 downto 0); -- DIP Switch
         output  :   out std_logic(BinaryCap - 1 downto 0)
     );
 end ALU;

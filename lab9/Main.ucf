@@ -1,0 +1,34 @@
+NET "clkin"          LOC = P123;
+NET "BTN[0]"          LOC = P47; 
+NET "BTN[0]" CLOCK_DEDICATED_ROUTE = FALSE;
+
+NET "AtoG[6]"        LOC = P41;
+NET "AtoG[5]"        LOC = P40;
+NET "AtoG[4]"        LOC = P35;
+NET "AtoG[3]"        LOC = P34;
+NET "AtoG[2]"        LOC = P32;
+NET "AtoG[1]"        LOC = P29;
+NET "AtoG[0]"        LOC = P27;
+
+NET "common[3]"      LOC = P30;
+NET "common[2]"      LOC = P33;
+NET "common[1]"      LOC = P43;
+NET "common[0]"      LOC = P44;
+
+NET "SW[0]"          LOC = P66;
+NET "SW[1]"          LOC = P62;
+NET "SW[2]"          LOC = P61;
+NET "SW[3]"          LOC = P59;
+NET "SW[4]"          LOC = P58;
+NET "SW[5]"          LOC = P57;
+NET "SW[6]"          LOC = P56;
+NET "SW[7]"          LOC = P55;
+
+NET "DSW[0]"         LOC = P99;
+NET "DSW[1]"         LOC = P100;
+NET "DSW[2]"         LOC = P101;
+NET "DSW[3]"         LOC = P102;
+NET "DSW[4]"         LOC = P104;
+NET "DSW[5]"         LOC = P105;
+NET "DSW[6]"         LOC = P111;
+NET "DSW[7]"         LOC = P112;
