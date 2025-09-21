@@ -7,7 +7,7 @@ entity Main is
         clkin    : in  std_logic;                     -- main clock
         SW       : in  std_logic_vector(7 downto 0);  -- operand A (switch)
         DSW      : in  std_logic_vector(7 downto 0);  -- operand B (dip switch)
-        BTN      : in  std_logic_vector(1 downto 0);  -- select operation (button)
+        BTN      : in  std_logic;                     -- single button to toggle operation
         common   : out std_logic_vector(3 downto 0);  -- seven segment commons
         AtoG     : out std_logic_vector(6 downto 0)   -- seven segment segments
     );
@@ -53,24 +53,33 @@ architecture RTL of Main is
     signal slow_clk  : std_logic;
     signal dummy_cnt : std_logic_vector(15 downto 0);
 
+
+    signal SEL        : std_logic_vector(1 downto 0) := "00";
+    signal btn_prev   : std_logic := '0';
+
 begin
+    process(clkin)
+    begin
+        if rising_edge(clkin) then
+            if BTN = '1' and btn_prev = '0' then
+                SEL <= std_logic_vector(unsigned(SEL) + 1);
+            end if;
+            btn_prev <= BTN;
+        end if;
+    end process;
+
     U_ALU: ALU
-        generic map(
-            BinaryCap => 8
-        )
+        generic map(BinaryCap => 8)
         port map(
             EN     => '1',
-            SEL    => BTN,
+            SEL    => SEL,
             SW     => SW,
             DSW    => DSW,
             output => alu_out
         );
 
     U_DIV: MODN
-        generic map(
-            Nbits => 16,
-            DNum  => 2
-        )
+        generic map(Nbits => 16, DNum => 2)
         port map(
             clk    => clkin,
             count  => dummy_cnt,

@@ -1,6 +1,6 @@
 NET "clkin"          LOC = P123;
-NET "BTN[0]"          LOC = P47; 
-NET "BTN[0]" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "BTN"          LOC = P47; 
+NET "BTN" CLOCK_DEDICATED_ROUTE = FALSE;
 
 NET "AtoG[6]"        LOC = P41;
 NET "AtoG[5]"        LOC = P40;
